@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Temp" parallel="tests" thread-count="3" verbose="1">
+<!-- <suite name="Temp3" > -->
+
+	<!-- <method-selectors> <method-selector> <script language="beanshell"> 
+		<![CDATA[ (groups.containsKey("CS1") || groups.containsKey("CS2") && (groups.containsKey("P1") 
+		|| groups.containsKey("P2")))]]> </script> </method-selector> </method-selectors> -->
+
+	<parameter name="BASE_URL" value="https://your-environment-url.example.com" />
+	<parameter name="USER_NAME" value="test.user@example.com" />
+	<parameter name="PASSWORD" value="your-password-here" />
+
+	<parameter name="browserName" value="chrome" />
+	<parameter name="implicitlyWaitTime" value="10" />
+	<parameter name="pageLoadTimeout" value="120" />
+	<parameter name="scriptTimeout" value="30" />
+	<parameter name="scriptTimeout" value="30" />
+
+	<!--
+	<parameter name="remote" value="true" />
+	<parameter name="remoteURL" value="http://localhost:4444/wd/hub" /> 
+	<parameter name="Generate_TestResultsDoc" value="yes" /> 
+	-->
+
+<!-- 	<parameter name="generateDocument" value="true" />  -->
+
+	<test name="TCLN_ContextPassing1">
+		<classes>
+			<class name="scripts.TCLN_ContextPassing2" />
+		</classes>
+	</test>
+	<test name="TCLN_ContextPassing2">
+		<classes>
+			<class name="scripts.TCLN_ContextPassing2" />
+		</classes>
+	</test>
+	
+	<test name="TCLN_ContextPassing3">
+		<classes>
+			<class name="scripts.TCLN_ContextPassing2" />
+		</classes>
+	</test>
+
+
+</suite>
+
+<!-- https://stackoverflow.com/questions/44247270/how-to-set-test-group-to-test-methods-dynamically-using-testng -->

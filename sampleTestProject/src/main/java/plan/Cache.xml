@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE suite SYSTEM 'http://testng.org/testng-1.0.dtd'>
+<suite name='Cache'  parallel="false" thread-count="3" verbose="1"> 
+
+	<parameter name="BASE_URL"	value="https://your-environment-url.example.com" />
+	<parameter name="USER_NAME" value="test.user@example.com" />
+	<parameter name="PASSWORD" value="your-password-here" />
+	
+	<parameter name="browserName" value="chrome" />
+	<parameter name="implicitlyWaitTime" value="5" />
+	<parameter name="pageLoadTimeout" value="120" />
+	<parameter name="scriptTimeout" value="30" />
+	
+	<!--
+	LNCreatePO
+	<test name="LNCreateApprovePurchaseOrder">
+		<classes>
+			<class name="scripts.TCLN_LNCreateApprovePurchaseOrder" />
+		</classes>
+	</test> -->
+	
+	<test name="SetCache">
+		<classes>
+			<class name="scripts.SetCache" />
+		</classes>
+	</test>
+	
+	<test name="GetCache">
+		<classes>
+			<class name="scripts.GetCache" />
+		</classes>
+	</test>  
+	
+	
+</suite>

@@ -1,0 +1,31 @@
+version: "3"
+services:
+  HubService:
+    image: selenium/hub:4.0.0-rc-2-20210930
+    container_name: seleniumHub
+    ports:
+      - "4444:4444" 
+      - "4442:4442"
+      - "4443:4443"
+
+  ChromeService1:
+    image: selenium/node-chrome:4.0.0-rc-2-20210930
+    container_name :  ChromeService1
+    shm_size: "2gb"
+    ports: 
+      - "1001:7900"
+    volumes:
+      - ./data:/home/seluser/data
+      - ./downloads:/home/seluser/downloads
+    environment:
+      - SE_EVENT_BUS_HOST=seleniumHub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=1
+      - SCREEN_WIDTH=1920
+      - SCREEN_HEIGHT=1080
+    depends_on:
+      - HubService
+      
+
+  

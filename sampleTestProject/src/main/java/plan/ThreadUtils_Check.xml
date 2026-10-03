@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="ThreadUtils_Check" parallel="tests">
+
+	<parameter name="BASE_URL" 	value="https://your-environment-url.example.com" />
+	<parameter name="USER_NAME" value="test.user@example.com" />
+	<parameter name="PASSWORD" value="your-password-here" />
+	
+	<parameter name="browserName" value="chrome" />
+	<parameter name="implicitlyWaitTime" value="10" />
+	<parameter name="pageLoadTimeout" value="120" />
+	<parameter name="scriptTimeout" value="30" />
+	
+	<!-- Test -->
+	<test name="TCLN_DockerWithBrowserFactory">
+		<classes>
+			<class name="scripts.TCLN_DockerWithBrowserFactory" />
+		</classes>
+	</test> 
+	
+	<test name="LNSampleTestCase">
+		<classes>
+			<class name="scripts.LNSampleTestCase" />
+		</classes>
+	</test>
+	
+	
+</suite> 
+

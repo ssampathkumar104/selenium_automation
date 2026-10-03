@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="AutomaticDockerGridSetupAndKill">
+
+	<parameter name="BASE_URL" 	value="https://your-environment-url.example.com" />
+	<parameter name="USER_NAME" value="test.user@example.com" />
+	<parameter name="PASSWORD" value="your-password-here" />
+	
+	<parameter name="implicitlyWaitTime" value="15" />
+	<parameter name="pageLoadTimeout" value="120" />
+	<parameter name="scriptTimeout" value="30" />
+	<parameter name="browserName" value="chrome" />
+	<parameter name="implicitlyWaitTime" value="15" />
+	<parameter name="pageLoadTimeout" value="120" />
+	<parameter name="scriptTimeout" value="30" />
+	<parameter name="remote" value="true" />
+	<parameter name="recording" value="false" />
+    <parameter name="remoteURL" value="http://localhost:4444/wd/hub" />
+	
+     <test name="AutomaticDockerSetup">
+        <classes>
+			<!--<class name="scripts.SetupDockerGrid" />-->
+            <class name="scripts.TCLN_IDMCAPTURE" />
+        </classes>
+    </test> 
+    
+</suite>
